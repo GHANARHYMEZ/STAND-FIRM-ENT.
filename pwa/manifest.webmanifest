@@ -1,0 +1,15 @@
+{
+  "name": "STAND FIRM ENT.",
+  "short_name": "STAND FIRM",
+  "description": "Shop manager: sales, stock, customers, suppliers and reports.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0f5c3a",
+  "theme_color": "#0f5c3a",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

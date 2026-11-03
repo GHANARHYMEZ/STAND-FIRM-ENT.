@@ -1,0 +1,10 @@
+{
+  "appId": "com.standfirment.shop",
+  "appName": "STAND FIRM ENT",
+  "webDir": "www",
+  "backgroundColor": "#0f5c3a",
+  "android": { "allowMixedContent": false },
+  "plugins": {
+    "SplashScreen": { "launchShowDuration": 0 }
+  }
+}

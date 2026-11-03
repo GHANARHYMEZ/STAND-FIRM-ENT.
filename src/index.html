@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>STAND FIRM ENT.</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef2ee;--panel:#fff;--ink:#14251c;--mut:#5d6e64;--line:#d6ddd7;--brand:#0f5c3a;--onbrand:#fff;--gold:#f2b705;--red:#b3261e;--soft:#e3ece5;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1612;--panel:#16211b;--ink:#e8f0ea;--mut:#9bb0a3;--line:#27382e;--brand:#3fbf82;--onbrand:#06140d;--gold:#f2c230;--red:#ff8a80;--soft:#1e2e25}}
+:root[data-theme="dark"]{--bg:#0e1612;--panel:#16211b;--ink:#e8f0ea;--mut:#9bb0a3;--line:#27382e;--brand:#3fbf82;--onbrand:#06140d;--gold:#f2c230;--red:#ff8a80;--soft:#1e2e25}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:15px/1.45 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:'Bricolage Grotesque',Figtree,sans-serif;margin:0}
+.app{display:grid;grid-template-columns:200px 1fr;min-height:100vh}
+nav{background:var(--brand);color:var(--onbrand);padding:18px 12px;display:flex;flex-direction:column;gap:4px;position:sticky;top:0;height:100vh}
+nav .logo{font:800 20px 'Bricolage Grotesque';padding:0 10px 14px}
+nav .logo small{display:block;font:400 12px Figtree;opacity:.8}
+nav button{all:unset;cursor:pointer;padding:10px;border-radius:8px;font-weight:500}
+nav button.on{background:var(--gold);color:#14251c;font-weight:700}
+nav button:focus-visible,.b:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--gold);outline-offset:1px}
+nav .sp{flex:1}
+main{padding:22px;max-width:1100px;width:100%}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;gap:10px;flex-wrap:wrap}
+.top h2{font-size:26px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px}
+.stat b{display:block;font:800 24px 'Bricolage Grotesque'}.stat span,.mut{color:var(--mut);font-size:13px}
+.red{color:var(--red)}
+.b{all:unset;cursor:pointer;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--panel);font-weight:500;text-align:center}
+.b.p{background:var(--brand);color:var(--onbrand);border-color:var(--brand);font-weight:700}
+.b.sm{padding:4px 10px;font-size:13px}
+input,select{width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink);font:inherit}
+label{display:block;margin:0 0 10px;font-size:13px;color:var(--mut)}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);font-size:14px}
+th{color:var(--mut);font-weight:500;font-size:13px}td.n,th.n{text-align:right}
+.scroll{overflow-x:auto}
+.pos{display:grid;grid-template-columns:1fr 340px;gap:14px;align-items:start}
+.plist{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));margin-top:10px}
+.prod{all:unset;cursor:pointer;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px;display:block}
+.prod:hover{border-color:var(--brand)}.prod:focus-visible{outline:3px solid var(--gold)}
+.prod b{display:block}.prod .pr{font:700 16px 'Bricolage Grotesque';color:var(--brand);margin-top:4px}
+.ticket{background:var(--panel);border:1px solid var(--line);border-top:6px solid var(--gold);border-radius:4px 4px 10px 10px;padding:14px;position:sticky;top:12px}
+.seg{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:10px}
+.seg button{all:unset;cursor:pointer;flex:1;text-align:center;padding:8px 4px;font-weight:500;font-size:14px}
+.seg button.on{background:var(--brand);color:var(--onbrand);font-weight:700}
+.line{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:7px 0;border-bottom:1px dashed var(--line)}
+.q{display:flex;align-items:center;gap:6px}.q button{all:unset;cursor:pointer;width:24px;height:24px;border-radius:6px;background:var(--soft);text-align:center;font-weight:700}
+.tot{display:flex;justify-content:space-between;font:800 22px 'Bricolage Grotesque';margin:12px 0}
+.bar{display:flex;align-items:flex-end;gap:8px;height:120px;margin-top:8px}
+.bar div{flex:1;background:var(--brand);border-radius:4px 4px 0 0;min-height:2px;position:relative}
+.bar i{position:absolute;bottom:-20px;left:0;right:0;text-align:center;font:11px Figtree;color:var(--mut)}
+.rank{display:flex;align-items:center;gap:8px;margin:6px 0;font-size:14px}.rank span{height:8px;background:var(--gold);border-radius:4px;display:block}
+#m{position:fixed;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;padding:16px;z-index:20}
+#m[hidden]{display:none}
+.box{background:var(--panel);border-radius:12px;padding:20px;width:100%;max-width:380px;max-height:90vh;overflow:auto}
+.box h3{margin-bottom:12px}.row{display:flex;gap:8px;justify-content:flex-end}.row .b{flex:1}
+#t{position:fixed;left:50%;transform:translateX(-50%);bottom:84px;background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:20px;z-index:30;font-size:14px}
+#t[hidden]{display:none}
+.rc{font-family:ui-monospace,Menlo,monospace;font-size:13px}.rc div{display:flex;justify-content:space-between}
+@media print{body *{visibility:hidden}#m,#m *{visibility:visible}#m{position:absolute;background:#fff;color:#000}.row{display:none}}
+@media(max-width:800px){
+.app{display:block}
+nav{position:fixed;bottom:0;left:0;right:0;top:auto;height:auto;flex-direction:row;padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));z-index:10;gap:2px}
+nav .logo,nav .sp,nav .set{display:none}
+nav{overflow-x:auto}nav button{flex:0 0 auto;text-align:center;padding:9px 10px;font-size:12px;white-space:nowrap}
+main{padding:14px 12px 90px}
+.pos{grid-template-columns:1fr}.ticket{position:static}
+:root{padding-bottom:0}
+}
+</style>
+</head>
+<body>
+<div class="app">
+<nav id="nav"></nav>
+<main id="v"></main>
+</div>
+<div id="m" hidden></div><div id="t" hidden></div><datalist id="cats"><option>Rent<option>Salaries<option>Transport<option>Electricity<option>Water<option>Phone and data<option>MoMo charges<option>Repairs<option>Other</datalist>
+<script>
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fm=n=>'GH₵ '+(+n).toLocaleString('en-GH',{minimumFractionDigits:2,maximumFractionDigits:2});
+const seed=()=>({shop:'STAND FIRM ENT.',tax:0,n:20,
+products:[['Perfumed rice 25kg','bag',210,245,232,40,10],['Vegetable oil 5L','gallon',95,115,106,60,12],['Sugar 1kg','pack',14,18,16,120,30],['Tomato paste 400g','carton',160,195,178,25,8],['Noodles (carton of 40)','carton',130,155,142,30,8],['Bottled water (pack of 12)','pack',16,22,19,8,15],['Chocolate drink 400g','tin',38,48,43,50,12],['Gari 5kg','bag',32,42,37,45,10]].map((a,i)=>({id:i+1,name:a[0],unit:a[1],cost:a[2],rt:a[3],ws:a[4],stock:a[5],low:a[6]})),
+customers:[{id:1,name:'Auntie Efua (chop bar)',phone:'0244 000 111',bal:0},{id:2,name:'Kwame Mensah (retailer)',phone:'0200 000 222',bal:0}],sales:[]});
+let S;try{S=JSON.parse(localStorage.getItem('shopdesk-gh')||'null')}catch(e){}
+if(!S)S=seed();
+['suppliers','purchases','exp','pay','log'].forEach(k=>S[k]=S[k]||[]);S.vat=S.vat||{on:false,tin:'',addr:'',incl:true};
+if(!S.staff||!S.staff.length)S.staff=[{id:1,name:'AMMA KONADU',role:'owner',pin:'1234'}];
+S.staff.forEach(s=>{if(s.id==1&&s.name=='Owner')s.name='AMMA KONADU'});if(!S.nm){S.shop='STAND FIRM ENT.';S.nm=1}
+let U=null;
+const PERM={manager:['dash','pos','stock','cust','sales','buy','sup','exp','rep'],cashier:['pos','cust','sales']};
+const can=t=>U.role=='owner'||(PERM[U.role]||[]).includes(t);
+const un=id=>(S.staff.find(x=>x.id==id)||{}).name||'-';
+const log=a=>{S.log.unshift({t:Date.now(),u:U?U.name:'',a});S.log.length=Math.min(S.log.length,300)};
+const since=r=>r=='all'?0:r==1?new Date().setHours(0,0,0,0):Date.now()-r*864e5;
+const dt=t=>new Date(t).toLocaleString('en-GB',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
+const save=()=>{try{localStorage.setItem('shopdesk-gh',JSON.stringify(S))}catch(e){}};
+let view='dash',cart=[],mode='R',pay='cash',cust='',paidNow=0,q='';
+const P=id=>S.products.find(p=>p.id==id),C=id=>S.customers.find(c=>c.id==id);
+const toast=m=>{const t=$('#t');t.textContent=m;t.hidden=false;clearTimeout(toast.x);toast.x=setTimeout(()=>t.hidden=true,2400)};
+const closeM=()=>$('#m').hidden=true;
+function form(title,fields,cb,btn='Save'){
+$('#m').innerHTML=`<div class="box"><h3>${title}</h3>${fields.map(f=>`<label>${f[1]}<input id="f_${f[0]}" ${f[0]=='cat'?'list="cats"':''} type="${f[2]||'text'}" value="${esc(f[3]??'')}" ${f[2]=='number'?'step="any" min="0"':''}></label>`).join('')}<div class="row"><button class="b" onclick="closeM()">Cancel</button><button class="b p" id="ok">${btn}</button></div></div>`;
+$('#m').hidden=false;
+$('#ok').onclick=()=>{const v={};fields.forEach(f=>{const x=$('#f_'+f[0]).value;v[f[0]]=f[2]=='number'?(+x||0):x.trim()});if(cb(v)!==false){log(title);save();closeM();render()}};
+}
+const tabs=[['dash','Dashboard'],['pos','Sell'],['buy','Purchases'],['stock','Stock'],['sup','Suppliers'],['cust','Customers'],['exp','Expenses'],['sales','Sales'],['rep','Reports'],['staff','Staff']];
+function render(){
+if(!U)return login();if(!can(view))view='pos';$('#nav').innerHTML=`<div class="logo">${esc(S.shop)}<small>${esc(U.name)}, ${U.role}</small></div>`+tabs.filter(t=>can(t[0])).map(t=>`<button class="${view==t[0]?'on':''}" onclick="go('${t[0]}')">${t[1]}</button>`).join('')+`<div class="sp"></div>${U.role=='owner'?'<button class="set" onclick="settings()">Settings</button>':''}<button class="so" onclick="logout()">Sign out</button>`;
+({dash,pos,stock,cust:customers,sales,buy:purchases,sup:suppliers,exp:expenses,rep:reports,staff:staffV})[view]();
+}
+const go=v=>{view=v;render();scrollTo(0,0)};
+const day=t=>new Date(t).toDateString();
+function dash(){
+const td=S.sales.filter(s=>day(s.t)==day(Date.now())),sum=a=>a.reduce((x,s)=>x+s.total,0);
+const profit=td.reduce((a,s)=>a+s.items.reduce((x,l)=>x+(l.price-l.cost)*l.qty,0),0);
+const ex=S.exp.filter(e=>day(e.t)==day(Date.now())).reduce((a,e)=>a+e.amt,0),owed=S.customers.reduce((a,c)=>a+c.bal,0),low=S.products.filter(p=>p.stock<=p.low);
+const days=[...Array(7)].map((_,i)=>{const d=new Date(Date.now()-(6-i)*864e5);return{l:d.toLocaleDateString('en-GB',{weekday:'short'}),v:sum(S.sales.filter(s=>day(s.t)==d.toDateString()))}});
+const mx=Math.max(1,...days.map(d=>d.v));
+const top={};S.sales.forEach(s=>s.items.forEach(l=>top[l.name]=(top[l.name]||0)+l.qty));
+const tp=Object.entries(top).sort((a,b)=>b[1]-a[1]).slice(0,5),tm=tp[0]?tp[0][1]:1;
+$('#v').innerHTML=`<div class="top"><h2>Today</h2><button class="b p" onclick="go('pos')">New sale</button></div>
+<div class="grid"><div class="card stat"><span>Sales today</span><b>${fm(sum(td))}</b></div><div class="card stat"><span>Net profit today (after expenses)</span><b>${fm(profit-ex)}</b></div><div class="card stat"><span>Customers owe you</span><b class="${owed?'red':''}">${fm(owed)}</b></div><div class="card stat"><span>You owe suppliers</span><b>${fm(S.suppliers.reduce((a,c)=>a+c.bal,0))}</b></div><div class="card stat"><span>Items running low</span><b class="${low.length?'red':''}">${low.length}</b></div></div>
+<div class="grid" style="margin-top:12px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+<div class="card"><h3>Last 7 days</h3><div class="bar" style="margin-bottom:24px">${days.map(d=>`<div style="height:${d.v/mx*100}%" title="${fm(d.v)}"><i>${d.l}</i></div>`).join('')}</div></div>
+<div class="card"><h3>Best sellers</h3>${tp.length?tp.map(t=>`<div class="rank"><div style="flex:1">${esc(t[0])}</div><span style="width:${t[1]/tm*80}px"></span><b>${t[1]}</b></div>`).join(''):'<p class="mut">Sell something and your best sellers appear here.</p>'}</div>
+<div class="card"><h3>Restock soon</h3>${low.length?low.map(p=>`<div class="line"><span>${esc(p.name)}</span><b class="red">${p.stock} ${p.unit}</b></div>`).join(''):'<p class="mut">All items are above their reorder level.</p>'}</div></div>`;
+}
+function pos(){
+$('#v').innerHTML=`<div class="top"><h2>Sell</h2></div><div class="pos"><div><input id="q" placeholder="Search items" value="${esc(q)}" oninput="q=this.value;drawList()"><div class="plist" id="pl"></div></div><div class="ticket" id="tk"></div></div>`;
+drawList();drawCart();
+}
+function drawList(){
+const l=S.products.filter(p=>p.name.toLowerCase().includes(q.toLowerCase()));
+$('#pl').innerHTML=l.map(p=>`<div><button class="prod" style="width:calc(100% - 22px)" onclick="add(${p.id})"><b>${esc(p.name)}</b><span class="mut">${p.stock} ${p.unit} left</span><div class="pr">${fm(mode=='W'?p.ws:p.rt)}</div></button>${p.pk>1&&p.pp?`<button class="b sm" style="width:100%;box-sizing:border-box;margin-top:4px" onclick="add(${p.id},1)">Pack of ${p.pk}: ${fm(p.pp)}</button>`:''}</div>`).join('')||'<p class="mut">No item matches. Add it in Stock.</p>';
+}
+function add(id,pk){const p=P(id),st=pk?p.pk:1,l=cart.find(x=>x.id==id&&!!x.pk==!!pk),u=cart.filter(x=>x.id==id).reduce((a,x)=>a+x.qty,0)+st;if(u>p.stock)return toast('Only '+p.stock+' '+p.unit+' in stock');l?l.qty+=st:cart.push({id,qty:st,pk:!!pk});drawCart()}
+function qty(id,d,pk){const l=cart.find(x=>x.id==id&&!!x.pk==!!pk),p=P(id),st=pk?p.pk:1,o=cart.filter(x=>x!=l&&x.id==id).reduce((a,x)=>a+x.qty,0);l.qty+=d*st;if(l.qty+o>p.stock){l.qty=Math.max(0,Math.floor((p.stock-o)/st)*st);toast('Only '+p.stock+' in stock')}if(l.qty<=0)cart=cart.filter(x=>x!=l);drawCart()}
+function calc(){const L=cart.map(l=>{const p=P(l.id);return{id:l.id,name:p.name+(l.pk?' (pack)':''),qty:l.qty,cost:p.cost,pk:l.pk,txb:S.vat.on&&!/^n/i.test(p.tx||''),price:l.pk?p.pp/p.pk:(mode=='W'?p.ws:p.rt)}});
+let sub=0,vat=0,nh=0,gf=0;L.forEach(l=>{const g=l.price*l.qty;if(!l.txb){sub+=g;return}const b=S.vat.incl?g/1.2:g;sub+=b;vat+=b*.15;nh+=b*.025;gf+=b*.025});
+const tax=vat+nh+gf;return{L,sub,vat,nh,gf,tax,tot:sub+tax}}
+function setMode(m){mode=m;drawList();drawCart()}
+function drawCart(){
+const c=calc();
+$('#tk').innerHTML=`<div class="seg"><button class="${mode=='R'?'on':''}" onclick="setMode('R')">Retail price</button><button class="${mode=='W'?'on':''}" onclick="setMode('W')">Wholesale price</button></div>
+${c.L.map(l=>`<div class="line"><div>${esc(l.name)}<br><span class="mut">${fm(l.price)} each</span></div><div class="q"><button onclick="qty(${l.id},-1,${l.pk?1:0})" aria-label="Less">−</button>${l.qty}<button onclick="qty(${l.id},1,${l.pk?1:0})" aria-label="More">+</button></div><b>${fm(l.price*l.qty)}</b></div>`).join('')||'<p class="mut">Tap an item to add it.</p>'}
+${c.tax?`<div class="line"><span class="mut">VAT 15%</span><span>${fm(c.vat)}</span></div><div class="line"><span class="mut">NHIL 2.5%</span><span>${fm(c.nh)}</span></div><div class="line"><span class="mut">GETFund 2.5%</span><span>${fm(c.gf)}</span></div>`:''}
+<div class="tot"><span>Total</span><span>${fm(c.tot)}</span></div>
+<div class="seg">${[['cash','Cash'],['momo','MoMo'],['card','Card'],['credit','On credit']].map(p=>`<button class="${pay==p[0]?'on':''}" onclick="pay='${p[0]}';drawCart()">${p[1]}</button>`).join('')}</div>
+<label>Customer<select onchange="cust=this.value">${'<option value="">Walk-in customer</option>'+S.customers.map(x=>`<option value="${x.id}" ${cust==x.id?'selected':''}>${esc(x.name)}</option>`).join('')}</select></label>
+${pay=='credit'?`<label>Paid now (GH₵)<input type="number" min="0" step="any" value="${paidNow||''}" onchange="paidNow=+this.value||0"></label>`:''}
+<button class="b p" style="width:100%" onclick="charge()">Complete sale</button>`;
+}
+function charge(){
+const c=calc();if(!c.L.length)return toast('Add at least one item');
+if(pay=='credit'&&!cust)return toast('Choose a customer for credit sales');
+const paid=pay=='credit'?Math.min(paidNow,c.tot):c.tot,id=S.n++;
+c.L.forEach(l=>P(l.id).stock-=l.qty);
+if(pay=='credit'&&cust)C(cust).bal+=c.tot-paid;
+const s={id,t:Date.now(),items:c.L,sub:c.sub,tax:c.tax,vat:c.vat,nh:c.nh,gf:c.gf,total:c.tot,pay,cust:cust?+cust:0,paid,mode,u:U.id};
+S.sales.unshift(s);log('Sale #'+id+' '+fm(c.tot));save();cart=[];paidNow=0;pay='cash';cust='';
+receipt(s);render();
+}
+function receipt(s){
+const cu=s.cust?C(s.cust):null;
+$('#m').innerHTML=`<div class="box"><h3>Sale #${s.id} complete</h3><div class="rc"><p>${esc(S.shop)}<br>${new Date(s.t).toLocaleString('en-GB')}${cu?'<br>'+esc(cu.name):''}</p>${s.items.map(l=>`<div><span>${l.qty} × ${esc(l.name)}</span><span>${l.price*l.qty}</span></div>`).join('')}<hr>${s.tax?`<div><span>Tax</span><span>${s.tax.toFixed(2)}</span></div>`:''}<div><b>Total</b><b>${fm(s.total)}</b></div><div><span>Paid by ${s.pay=='momo'?'MoMo':s.pay}</span><span>${fm(s.paid)}</span></div>${s.total>s.paid?`<div class="red"><span>Balance owed</span><span>${fm(s.total-s.paid)}</span></div>`:''}</div><br><div class="row"><button class="b p" onclick="closeM()">Done</button></div></div>`;
+$('#m').hidden=false;
+}
+function stock(){
+$('#v').innerHTML=`<div class="top"><h2>Stock</h2><button class="b p" onclick="editP()">Add item</button></div><div class="card scroll"><table><tr><th>Item</th><th class="n">Cost</th><th class="n">Retail</th><th class="n">Wholesale</th><th class="n">In stock</th><th></th></tr>${S.products.map(p=>`<tr><td>${esc(p.name)}<br><span class="mut">per ${esc(p.unit)}</span></td><td class="n">${p.cost}</td><td class="n">${p.rt}</td><td class="n">${p.ws}</td><td class="n ${p.stock<=p.low?'red':''}"><b>${p.stock}</b></td><td class="n"><button class="b sm" onclick="restock(${p.id})">Add stock</button> <button class="b sm" onclick="editP(${p.id})">Edit</button></td></tr>`).join('')}</table></div>`;
+}
+function editP(id){
+const p=id?P(id):{name:'',unit:'',cost:'',rt:'',ws:'',stock:'',low:5};
+form(id?'Edit item':'Add item',[['name','Item name','text',p.name],['unit','Sold by (bag, carton, pack)','text',p.unit],['cost','Cost price (GH₵)','number',p.cost],['rt','Retail price (GH₵)','number',p.rt],['ws','Wholesale price (GH₵)','number',p.ws],['pk','Units per pack (optional)','number',p.pk||''],['pp','Pack price (GH₵, optional)','number',p.pp||''],['tx','Charge VAT on this item? (yes or no)','text',p.tx||'yes'],['stock','Quantity in stock','number',p.stock],['low','Warn me when stock reaches','number',p.low]],v=>{
+if(!v.name){toast('Enter an item name');return false}
+if(id)Object.assign(P(id),v);else S.products.push({id:Date.now(),...v})});
+}
+function restock(id){form('Add stock: '+P(id).name,[['n','Quantity received','number','']],v=>{P(id).stock+=v.n;toast('Stock updated')})}
+function customers(){
+$('#v').innerHTML=`<div class="top"><h2>Customers</h2><button class="b p" onclick="editC()">Add customer</button></div><div class="card scroll"><table><tr><th>Name</th><th>Phone</th><th class="n">Owes you</th><th></th></tr>${S.customers.map(c=>`<tr><td>${esc(c.name)}</td><td>${esc(c.phone)}</td><td class="n ${c.bal?'red':''}"><b>${fm(c.bal)}</b></td><td class="n">${c.bal?`<button class="b sm" onclick="receive(${c.id})">Record payment</button>`:''}</td></tr>`).join('')||'<tr><td colspan="4" class="mut">No customers yet. Add the people you sell to on credit.</td></tr>'}</table></div>`;
+}
+function editC(){form('Add customer',[['name','Name or business'],['phone','Phone number','tel'],['tin','Customer TIN (for VAT invoices)']],v=>{if(!v.name){toast('Enter a name');return false}S.customers.push({id:Date.now(),name:v.name,phone:v.phone,tin:v.tin,bal:0})})}
+function receive(id){const c=C(id);form('Payment from '+c.name,[['amt','Amount received (GH₵)','number',c.bal]],v=>{if(v.amt<=0)return false;const a=Math.min(v.amt,c.bal);c.bal-=a;S.pay.push({t:Date.now(),k:'cin',who:c.name,amt:a,u:U.id});toast('Payment recorded')},'Record payment')}
+function sales(){
+$('#v').innerHTML=`<div class="top"><h2>Sales</h2></div><div class="card scroll"><table><tr><th>#</th><th>When</th><th>Customer</th><th>Items</th><th>Paid by</th><th class="n">Total</th></tr>${S.sales.filter(s=>U.role!='cashier'||s.u==U.id).slice(0,100).map(s=>`<tr><td>${s.id}</td><td>${new Date(s.t).toLocaleString('en-GB',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})}</td><td>${s.cust&&C(s.cust)?esc(C(s.cust).name):'Walk-in'}</td><td>${s.items.reduce((a,l)=>a+l.qty,0)} ${s.mode=='W'?'(wholesale)':''}</td><td>${s.pay=='momo'?'MoMo':s.pay}${s.total>s.paid?` <span class="red">owes ${fm(s.total-s.paid)}</span>`:''}</td><td class="n"><b>${fm(s.total)}</b></td></tr>`).join('')||'<tr><td colspan="6" class="mut">No sales yet. Complete your first sale in Sell.</td></tr>'}</table></div>`;
+}
+function login(){
+$('#m').innerHTML=`<div class="box"><h3>${esc(S.shop)}</h3><p class="mut">Sign in to start work.</p><label>Staff member<select id="lu">${S.staff.map(s=>`<option value="${s.id}">${esc(s.name)} (${s.role})</option>`).join('')}</select></label><label>PIN<input id="lp" type="password" inputmode="numeric" autocomplete="off"></label><button class="b p" style="width:100%" id="lg">Sign in</button></div>`;
+$('#m').hidden=false;
+const ok=()=>{const s=S.staff.find(x=>x.id==$('#lu').value);if(s&&s.pin==$('#lp').value){U=s;view=s.role=='cashier'?'pos':'dash';closeM();log('Signed in');save();render()}else toast('Wrong PIN. Try again.')};
+$('#lg').onclick=ok;$('#lp').onkeydown=e=>{if(e.key=='Enter')ok()};
+}
+function logout(){log('Signed out');save();U=null;cart=[];render()}
+function purchases(){
+$('#v').innerHTML=`<div class="top"><h2>Purchases</h2><button class="b p" onclick="newBuy()">New purchase</button></div><div class="card scroll"><table><tr><th>#</th><th>When</th><th>Supplier</th><th>Items</th><th>By</th><th class="n">Total</th><th class="n">Unpaid</th></tr>${S.purchases.map(b=>`<tr><td>${b.id}</td><td>${dt(b.t)}</td><td>${esc(b.supN)}</td><td>${b.items.map(i=>i.qty+' × '+esc(i.name)).join(', ')}</td><td>${esc(un(b.u))}</td><td class="n"><b>${fm(b.total)}</b></td><td class="n ${b.total>b.paid?'red':''}">${fm(b.total-b.paid)}</td></tr>`).join('')||'<tr><td colspan="7" class="mut">No purchases yet. Record goods you buy so stock and costs stay correct.</td></tr>'}</table></div>`;
+}
+let pl=[],pS='',pPaid='';
+const bt=()=>{$('#bt').textContent=fm(pl.reduce((a,l)=>a+(l.qty||0)*(l.cost||0),0))};
+function newBuy(){pl=[{id:S.products[0].id,qty:'',cost:S.products[0].cost}];pS='';pPaid='';drawBuy()}
+function drawBuy(){
+$('#m').innerHTML=`<div class="box" style="max-width:480px"><h3>New purchase</h3><label>Supplier<select onchange="pS=this.value"><option value="">Cash purchase (no supplier)</option>${S.suppliers.map(s=>`<option value="${s.id}" ${pS==s.id?'selected':''}>${esc(s.name)}</option>`).join('')}</select></label>${pl.map((l,i)=>`<div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:6px;margin-bottom:8px"><select onchange="pl[${i}].id=+this.value;pl[${i}].cost=P(this.value).cost;drawBuy()">${S.products.map(p=>`<option value="${p.id}" ${l.id==p.id?'selected':''}>${esc(p.name)}</option>`).join('')}</select><input type="number" min="0" placeholder="Qty" value="${l.qty}" oninput="pl[${i}].qty=+this.value;bt()"><input type="number" min="0" step="any" placeholder="Cost each" value="${l.cost}" oninput="pl[${i}].cost=+this.value;bt()"></div>`).join('')}<button class="b sm" onclick="pl.push({id:S.products[0].id,qty:'',cost:S.products[0].cost});drawBuy()">Add another item</button><div class="tot"><span>Total</span><span id="bt"></span></div><label>Paid now (GH₵)<input type="number" min="0" step="any" value="${pPaid}" oninput="pPaid=+this.value"></label><div class="row"><button class="b" onclick="closeM()">Cancel</button><button class="b p" onclick="saveBuy()">Save purchase</button></div></div>`;
+$('#m').hidden=false;bt();
+}
+function saveBuy(){
+const L=pl.filter(l=>l.qty>0);if(!L.length)return toast('Enter a quantity for at least one item');
+const tot=L.reduce((a,l)=>a+l.qty*l.cost,0),paid=Math.min(+pPaid||0,tot),sp=pS?S.suppliers.find(x=>x.id==pS):null;
+if(!sp&&paid<tot)return toast('Choose a supplier for unpaid purchases');
+L.forEach(l=>{const p=P(l.id);p.stock+=l.qty;if(l.cost>0)p.cost=l.cost});
+if(sp)sp.bal+=tot-paid;
+S.purchases.unshift({id:S.purchases.length+1,t:Date.now(),sup:sp?sp.id:0,supN:sp?sp.name:'Cash purchase',items:L.map(l=>({name:P(l.id).name,qty:l.qty,cost:l.cost})),total:tot,paid,u:U.id});
+log('Purchase #'+S.purchases[0].id+' '+fm(tot));save();closeM();toast('Purchase saved. Stock updated.');render();
+}
+function suppliers(){
+$('#v').innerHTML=`<div class="top"><h2>Suppliers</h2><button class="b p" onclick="editS()">Add supplier</button></div><div class="card scroll"><table><tr><th>Name</th><th>Phone</th><th class="n">You owe</th><th></th></tr>${S.suppliers.map(s=>`<tr><td>${esc(s.name)}</td><td>${esc(s.phone)}</td><td class="n ${s.bal?'red':''}"><b>${fm(s.bal)}</b></td><td class="n">${s.bal?`<button class="b sm" onclick="paySup(${s.id})">Pay supplier</button>`:''}</td></tr>`).join('')||'<tr><td colspan="4" class="mut">No suppliers yet. Add the people you buy from.</td></tr>'}</table></div>`;
+}
+function editS(){form('Add supplier',[['name','Supplier name'],['phone','Phone number','tel']],v=>{if(!v.name){toast('Enter a name');return false}S.suppliers.push({id:Date.now(),name:v.name,phone:v.phone,bal:0})})}
+function paySup(id){const s=S.suppliers.find(x=>x.id==id);form('Pay '+s.name,[['amt','Amount paid (GH₵)','number',s.bal]],v=>{if(v.amt<=0)return false;const a=Math.min(v.amt,s.bal);s.bal-=a;S.pay.push({t:Date.now(),k:'sup',who:s.name,amt:a,u:U.id});toast('Payment recorded')},'Record payment')}
+function expenses(){
+const m=S.exp.filter(e=>e.t>=since(30)).reduce((a,e)=>a+e.amt,0);
+$('#v').innerHTML=`<div class="top"><h2>Expenses</h2><button class="b p" onclick="addE()">Add expense</button></div><div class="card stat" style="margin-bottom:12px"><span>Spent in the last 30 days</span><b>${fm(m)}</b></div><div class="card scroll"><table><tr><th>When</th><th>Category</th><th>Details</th><th>By</th><th class="n">Amount</th></tr>${S.exp.map(e=>`<tr><td>${dt(e.t)}</td><td>${esc(e.cat)}</td><td>${esc(e.desc)}</td><td>${esc(un(e.u))}</td><td class="n"><b>${fm(e.amt)}</b></td></tr>`).join('')||'<tr><td colspan="5" class="mut">No expenses yet. Record rent, wages, transport and other running costs.</td></tr>'}</table></div>`;
+}
+function addE(){form('Add expense',[['cat','Category (pick or type)'],['desc','Details'],['amt','Amount (GH₵)','number','']],v=>{if(v.amt<=0){toast('Enter the amount');return false}S.exp.unshift({id:Date.now(),t:Date.now(),cat:v.cat||'Other',desc:v.desc,amt:v.amt,u:U.id})})}
+function ledger(){
+const r=[];
+S.sales.forEach(s=>s.paid>0&&r.push({t:s.t,d:'Sale #'+s.id+' ('+(s.pay=='momo'?'MoMo':s.pay)+')',in:s.paid,u:s.u}));
+S.pay.forEach(p=>r.push(p.k=='cin'?{t:p.t,d:'Payment from '+p.who,in:p.amt,u:p.u}:{t:p.t,d:'Paid supplier '+p.who,out:p.amt,u:p.u}));
+S.purchases.forEach(b=>b.paid>0&&r.push({t:b.t,d:'Purchase #'+b.id+', '+b.supN,out:b.paid,u:b.u}));
+S.exp.forEach(e=>r.push({t:e.t,d:e.cat+(e.desc?': '+e.desc:''),out:e.amt,u:e.u}));
+return r.sort((a,b)=>a.t-b.t);
+}
+let rp='30';
+function reports(){
+const t0=since(rp),SS=S.sales.filter(s=>s.t>=t0),EE=S.exp.filter(e=>e.t>=t0);
+const rev=SS.reduce((a,s)=>a+s.sub,0),cogs=SS.reduce((a,s)=>a+s.items.reduce((x,l)=>x+l.cost*l.qty,0),0),gp=rev-cogs,ex=EE.reduce((a,e)=>a+e.amt,0);
+const tv=SS.reduce((a,s)=>a+(s.vat||0),0),tn=SS.reduce((a,s)=>a+(s.nh||0),0),tg=SS.reduce((a,s)=>a+(s.gf||0),0);const cat={};EE.forEach(e=>cat[e.cat]=(cat[e.cat]||0)+e.amt);
+const sv=S.products.reduce((a,p)=>a+p.stock*p.cost,0),rc=S.customers.reduce((a,c)=>a+c.bal,0),py=S.suppliers.reduce((a,c)=>a+c.bal,0);
+let run=0;const L=ledger().map(r=>({...r,run:run+=(r.in||0)-(r.out||0)}));
+const row=(a,b,c)=>`<tr><td>${a}</td><td class="n ${c||''}">${fm(b)}</td></tr>`;
+$('#v').innerHTML=`<div class="top"><h2>Reports</h2><div class="seg" style="margin:0">${[['1','Today'],['7','7 days'],['30','30 days'],['all','All time']].map(x=>`<button style="padding:8px 12px" class="${rp==x[0]?'on':''}" onclick="rp='${x[0]}';reports()">${x[1]}</button>`).join('')}</div></div>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))"><div class="card"><h3>Profit and loss</h3><table>${row('Sales',rev)}${row('Cost of goods sold',-cogs)}${row('<b>Gross profit</b>',gp)}${Object.entries(cat).map(e=>row(esc(e[0]),-e[1])).join('')}${row('<b>Net profit</b>',gp-ex,gp-ex<0?'red':'')}</table></div>
+<div class="card"><h3>Where the business stands now</h3><table>${row('Money in hand (cash and MoMo)',run)}${row('Stock at cost',sv)}${row('Customers owe you',rc)}${row('You owe suppliers',0-py)}${row('<b>Business worth</b>',run+sv+rc-py)}</table><p class="mut">Money in hand counts only what is recorded in this system.</p></div><div class="card"><h3>Tax collected on sales</h3><table>${row('VAT 15%',tv)}${row('NHIL 2.5%',tn)}${row('GETFund 2.5%',tg)}${row('<b>Total to account for</b>',tv+tn+tg)}</table><p class="mut">Covers only sales made while VAT was switched on in Settings.</p></div></div>
+<h3 style="margin:18px 0 8px">Cash book</h3><div class="card scroll"><table><tr><th>When</th><th>Details</th><th>By</th><th class="n">In</th><th class="n">Out</th><th class="n">Balance</th></tr>${L.filter(r=>r.t>=t0).slice(-60).reverse().map(r=>`<tr><td>${dt(r.t)}</td><td>${esc(r.d)}</td><td>${esc(un(r.u))}</td><td class="n">${r.in?fm(r.in):''}</td><td class="n">${r.out?fm(r.out):''}</td><td class="n">${fm(r.run)}</td></tr>`).join('')||'<tr><td colspan="6" class="mut">No money movements in this period.</td></tr>'}</table></div>`;
+}
+function staffV(){
+const td=S.sales.filter(s=>day(s.t)==day(Date.now()));
+$('#v').innerHTML=`<div class="top"><h2>Staff</h2><button class="b p" onclick="addStaff()">Add staff</button></div><div class="card scroll"><table><tr><th>Name</th><th>Role</th><th class="n">Sales today</th><th class="n">Amount</th><th></th></tr>${S.staff.map(s=>{const x=td.filter(t=>t.u==s.id);return `<tr><td>${esc(s.name)}</td><td>${s.role}</td><td class="n">${x.length}</td><td class="n">${fm(x.reduce((a,t)=>a+t.total,0))}</td><td class="n"><button class="b sm" onclick="newPin(${s.id})">Change PIN</button></td></tr>`}).join('')}</table></div><h3 style="margin:18px 0 8px">Activity log</h3><div class="card scroll"><table><tr><th>When</th><th>Who</th><th>What</th></tr>${S.log.slice(0,100).map(l=>`<tr><td>${dt(l.t)}</td><td>${esc(l.u)}</td><td>${esc(l.a)}</td></tr>`).join('')}</table></div>`;
+}
+function addStaff(){form('Add staff member',[['name','Name'],['role','Role: cashier, manager or owner'],['pin','PIN (4 or more digits)']],v=>{v.role=v.role.toLowerCase();if(!v.name||v.pin.length<4||!['cashier','manager','owner'].includes(v.role)){toast('Enter a name, a role (cashier, manager or owner) and a PIN of 4+ digits');return false}S.staff.push({id:Date.now(),name:v.name,role:v.role,pin:v.pin})})}
+function newPin(id){form('Change PIN',[['pin','New PIN (4 or more digits)']],v=>{if(v.pin.length<4){toast('PIN must be 4 or more digits');return false}S.staff.find(x=>x.id==id).pin=v.pin})}
+function receipt(s){
+const cu=s.cust?C(s.cust):null,v=S.vat,r=(a,b)=>`<div><span>${a}</span><span>${b}</span></div>`;
+$('#m').innerHTML=`<div class="box"><h3>${v.on?'Tax invoice INV-'+String(s.id).padStart(6,'0'):'Receipt #'+s.id}</h3><div class="rc"><p><b>${esc(S.shop)}</b><br>${esc(v.addr||'')}${v.tin?'<br>Supplier TIN: '+esc(v.tin):''}<br>${new Date(s.t).toLocaleString('en-GB')}${cu?'<br>Customer: '+esc(cu.name)+(cu.tin?'<br>Customer TIN: '+esc(cu.tin):''):''}<br>Served by ${esc(un(s.u))}</p>${s.items.map(l=>r(l.qty+' × '+esc(l.name)+(v.on&&!l.txb?' (no VAT)':''),fm(l.price*l.qty))).join('')}<hr>${s.tax>0?r('Value before tax',fm(s.sub))+r('VAT 15%',fm(s.vat))+r('NHIL 2.5%',fm(s.nh))+r('GETFund 2.5%',fm(s.gf))+r('Total tax',fm(s.tax)):''}<div><b>Total</b><b>${fm(s.total)}</b></div>${r('Paid by '+s.pay,fm(s.paid))}${s.total>s.paid?`<div class="red"><span>Balance owed</span><span>${fm(s.total-s.paid)}</span></div>`:''}${v.on?'<p class="mut">Internal record. Official GRA E-VAT invoices are issued through GRA’s E-VAT system.</p>':''}</div><br><div class="row"><button class="b" onclick="window.print()">Print</button><button class="b p" onclick="closeM()">Done</button></div></div>`;
+$('#m').hidden=false;
+}
+addEventListener('offline',()=>toast('You are offline. Sales keep saving on this device.'));addEventListener('online',()=>toast('Back online'));
+function settings(){form('Settings',[['shop','Shop name','text',S.shop],['addr','Address and phone','text',S.vat.addr],['tin','Your TIN (GRA)','text',S.vat.tin],['on','VAT registered? (yes or no)','text',S.vat.on?'yes':'no'],['incl','Shelf prices already include VAT and levies? (yes or no)','text',S.vat.incl?'yes':'no']],v=>{S.shop=v.shop||S.shop;Object.assign(S.vat,{addr:v.addr,tin:v.tin,on:/^y/i.test(v.on),incl:!/^n/i.test(v.incl)})})}
+function oldSettings(){form('Settings',[['shop','Shop name','text',S.shop],['tax','Tax added to each sale (%) — set 0 if prices already include tax','number',S.tax]],v=>{S.shop=v.shop||S.shop;S.tax=v.tax})}
+render();
+</script>
+</body>
+</html>
